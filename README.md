@@ -16,22 +16,19 @@ This is what the reproduction looks like in a browser:
 
 ## How to run
 
-Install dependencies:
+For convenience, all of the build output is included in this repo. To see the reproduction, just clone this repo and open the **index.html** file in a browser.
+
+If you want to re-run the Tailwind 4 build of the app's styles, you can do this from the root directory:
 
 ```sh
 pnpm i
-```
-
-Build the app styles:
-
-```sh
 pnpm build
 ```
 
-Open the **index.html** file in a browser.
+If you want to re-run the Tailwind 3 build of the package's styles, you can do this from the **tw3-package** directory:
 
-## How it works
-
-The app build runs Tailwind 4 to build **./dist/styles.css** based on **./styles.css**. This stylesheet `@import`s the styles from a pretend UI library whose styles are built with Tailwind 3, **./tw3-package/dist/styles.css**.
-
-You can re-run the build of that package's styles if you want to by running `pnpm build` in the **tw3-package** subdirectory, but this is not necessary as the build output is included in this repo.
+```sh
+cd tw3-package
+pnpm i
+pnpm build
+```

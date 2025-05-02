@@ -1,6 +1,6 @@
 # Tailwind v4.1.5 bug report
 
-This page demonstrates an issue that occurs when a component library with Tailwind 3 generated styles is used in an app with Tailwind 4 styles.
+This page demonstrates an issue ([tailwindlabs/tailwindcss#17845](https://github.com/tailwindlabs/tailwindcss/issues/17845)) that occurs when a component library with Tailwind 3 generated styles is used in an app with Tailwind 4 styles.
 
 In theory, the Tailwind 3 styles have their own prefix (`tw3-`) and are loaded into the `components` CSS cascade layer, so they should not interfere with the Tailwind styles in the consuming app.
 

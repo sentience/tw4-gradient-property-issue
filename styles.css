@@ -1,0 +1,4 @@
+@import url(../tw3-package/dist/styles.css) layer(components);
+
+@import "tailwindcss";
+@source not "./tw3-package";

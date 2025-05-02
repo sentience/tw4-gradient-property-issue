@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tailwind v4.1.0 bug report</title>
+    <meta charset="UTF-8">
+    <link href="./dist/styles.css" rel="stylesheet">
+</head>
+<body class="m-4 *:mb-4">
+    <h1 class="text-3xl font-bold">Tailwind v4.1.5 bug report</h1>
+    <p>This page demonstrates an issue that occurs when a component library with Tailwind 3 generated styles is used in an app with Tailwind 4 styles.</p>
+    <p>In theory, the Tailwind 3 styles have their own prefix (<code>tw3-</code>) and are loaded into the <code>components</code> CSS cascade layer, so they should not interfere with the Tailwind styles in the consuming app.</p>
+    <p>In practice, Tailwind 4 registers <code>--tw-gradient-from</code> as a <code>@property</code> that must contain a <code>&lt;color&gt;</code> value, but in the Tailwind 3 generated styles, <code>--tw-gradient-from</code> contains a color followed by a percentage (<code>#6b7280 var(--tw-gradient-from-position)</code>). This value is discarded by the browser as invalid, which breaks the TW3-generated gradient.</p>
+    <p>A fix for this could be to change the name of the variable in TW4 to something that doesn't clash with TW3, like <code>--tw-gradient-from-color</code>.</p>
+
+    <div class="w-full h-16 bg-gradient-to-l from-gray-500"></div>
+    <div class="font-bold text-end">☝️ TW4 gradient</div>
+    <div class="tw3-component h-16"></div>
+    <div class="font-bold text-end">☝️ TW3 gradient</div>
+</body>
+</html>

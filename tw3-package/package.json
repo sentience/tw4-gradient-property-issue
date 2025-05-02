@@ -1,0 +1,16 @@
+{
+  "name": "tw3-package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./styles.css -o ./dist/styles.css",
+    "dev": "npx tailwindcss -i ./styles.css -o ./dist/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "3"
+  }
+}

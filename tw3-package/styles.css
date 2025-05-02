@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .tw3-component {
+    @apply tw3-w-full tw3-h-16 tw3-bg-gradient-to-l tw3-from-gray-500;
+  }
+}

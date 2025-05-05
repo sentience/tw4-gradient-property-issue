@@ -4,7 +4,7 @@ This page demonstrates an issue ([tailwindlabs/tailwindcss#17845](https://github
 
 In theory, the Tailwind 3 styles have their own prefix (`tw3-`) and are loaded into the `components` CSS cascade layer, so they should not interfere with the Tailwind styles in the consuming app.
 
-In practice, Tailwind 4 registers `--tw-gradient-from` as a `@property` that must contain a `&lt;color&gt;` value, but in the Tailwind 3 generated styles, `--tw-gradient-from` contains a color followed by a percentage (`#6b7280 var(--tw-gradient-from-position)`). This value is discarded by the browser as invalid, which breaks the TW3-generated gradient.
+In practice, Tailwind 4 registers `--tw-gradient-from` as a `@property` that must contain a `<color>` value, but in the Tailwind 3 generated styles, `--tw-gradient-from` contains a color followed by a percentage (`#6b7280 var(--tw-gradient-from-position)`). This value is discarded by the browser as invalid, which breaks the TW3-generated gradient.
 
 A fix for this could be to change the name of the variable in TW4 to something that doesn't clash with TW3, like `--tw-gradient-from-color`.
 
